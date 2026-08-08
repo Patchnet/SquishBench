@@ -4,6 +4,15 @@
   "private": true,
   "description": "SquishBench — browser fidget toy and model bake-off harness",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Patchnet/SquishBench.git"
+  },
+  "keywords": [
+    "fidget",
+    "benchmark",
+    "vanilla-js"
+  ],
   "scripts": {
     "start": "npx --yes serve app -l 4173",
     "test": "node --test test/smoke.test.mjs"
