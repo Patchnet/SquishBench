@@ -1,0 +1,9 @@
+{
+  "model": "unknown",
+  "harness": "codex-cli-visualize-skill",
+  "mode": "oneshot",
+  "date": "2026-07-21",
+  "prompt": null,
+  "scored": false,
+  "notes": "Provenance snapshot, not a bake-off entrant. This is the Codex visualize-skill mockup that SquishBench was built around: it defined the two-hand interaction model and the ball / cow / pizza picker that prompts/oneshot.md now describes. It predates the prompt, was produced from an ad-hoc ask rather than the eval contract, and the exact model behind the visualize skill was not recorded — so it is excluded from scoring and kept only as the design reference. Byte-identical copy of sources/stress-reliever.html. Packaged as a visualize artifact: a single wrapper page holding the whole toy in a sandboxed iframe srcdoc, which the contract's file-split rule disallows. It also pulls floating-ui and lucide from a CDN at load, which the contract's no-network rule disallows; the toy itself still runs with those requests blocked."
+}
