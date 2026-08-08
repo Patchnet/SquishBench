@@ -1,0 +1,444 @@
+/* SquishBench reference app — theme tokens, page chrome, and the squishy stage. */
+
+:root {
+  color-scheme: light dark;
+
+  --background: light-dark(rgb(255 255 255), rgb(24 24 24));
+  --foreground: light-dark(rgb(26 28 31), rgb(255 255 255));
+  --card: color-mix(in oklab, var(--foreground) 5%, transparent);
+  --primary: light-dark(rgb(51 156 255), rgb(131 195 255));
+  --primary-foreground: light-dark(rgb(255 255 255), rgb(13 13 13));
+  --secondary: light-dark(rgb(255 255 255 / 96%), rgb(54 54 54 / 96%));
+  --secondary-foreground: var(--foreground);
+  --muted: color-mix(in srgb, var(--foreground) 10%, transparent);
+  --muted-foreground: light-dark(rgb(26 28 31 / 49.4%), rgb(255 255 255 / 49.8%));
+  --accent: light-dark(rgb(229 242 255), rgb(13 39 63));
+  --accent-foreground: var(--primary);
+  --border: light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%));
+  --input: light-dark(rgb(26 28 31 / 11.8%), color-mix(in oklab, rgb(0 0 0) 10%, transparent));
+  --ring: light-dark(rgb(51 156 255), rgb(131 195 255 / 76%));
+
+  /* Object palette. */
+  --series-1: var(--primary);
+  --series-2: light-dark(rgb(243 136 59), rgb(245 154 86));
+  --series-3: light-dark(rgb(93 201 119), rgb(116 213 139));
+  --series-4: light-dark(rgb(235 119 177), rgb(240 143 192));
+  --series-5: light-dark(rgb(155 121 236), rgb(170 145 239));
+
+  --font-sans: -apple-system, system-ui, "Segoe UI", sans-serif;
+  --font-size-base: 14px;
+  --font-weight-normal: 430;
+  --font-weight-medium: 500;
+  --radius: 12.5px;
+  --radius-lg: var(--radius);
+  --radius-2xl: calc(var(--radius) * 1.6);
+  --radius-full: 9999px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  padding: 24px 16px 40px;
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  line-height: 1.5;
+}
+
+h1 {
+  margin: 0;
+  font-size: calc(var(--font-size-base) * 1.72);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+p {
+  margin: 0;
+}
+
+.text-muted {
+  color: var(--muted-foreground);
+}
+
+/* ---------------------------------------------------------------- buttons */
+
+.btn {
+  display: inline-flex;
+  min-height: 28px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12px;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+  cursor: pointer;
+  font: inherit;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.btn:not(:disabled):hover {
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.btn-primary {
+  border-color: transparent;
+  color: var(--primary-foreground);
+  background: var(--foreground);
+}
+
+.btn-primary:not(:disabled):hover {
+  background: color-mix(in srgb, var(--foreground) 80%, transparent);
+}
+
+.btn-ghost {
+  border-color: transparent;
+  color: var(--muted-foreground);
+  background: transparent;
+}
+
+.btn-ghost:not(:disabled):hover {
+  color: var(--foreground);
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+/* ------------------------------------------------------------ app layout */
+
+#stress-reliever {
+  --sr-x: 50%;
+  --sr-y: 52%;
+  --sr-left-x: 16%;
+  --sr-left-y: 52%;
+  --sr-right-x: 78%;
+  --sr-right-y: 52%;
+  width: 100%;
+  max-width: 736px;
+  margin: 0 auto;
+  user-select: none;
+}
+
+.sr-head {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.sr-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.sr-badge {
+  margin-left: auto;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  color: var(--accent-foreground);
+  background: var(--accent);
+  font-size: max(11px, calc(var(--font-size-base) - 2px));
+  font-weight: var(--font-weight-medium);
+}
+
+.sr-readout {
+  margin-top: 9px;
+  text-align: center;
+}
+
+/* ------------------------------------------------------------- the stage */
+
+.sr-stage {
+  position: relative;
+  height: 420px;
+  min-height: 340px;
+  overflow: hidden;
+  border-radius: var(--radius-2xl);
+  background:
+    radial-gradient(circle at 52% 45%, color-mix(in srgb, var(--series-1) 10%, transparent), transparent 34%),
+    linear-gradient(135deg, color-mix(in srgb, var(--muted) 56%, transparent), color-mix(in srgb, var(--background) 70%, transparent)),
+    var(--card);
+  cursor: crosshair;
+  touch-action: none;
+}
+
+.sr-stage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.32;
+  background-image: radial-gradient(color-mix(in srgb, var(--foreground) 20%, transparent) 1px, transparent 1px);
+  background-size: 22px 22px;
+  pointer-events: none;
+}
+
+.sr-hint {
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+  transform: translateX(-50%);
+  color: var(--muted-foreground);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------- the hands */
+
+.sr-hand {
+  position: absolute;
+  z-index: 8;
+  font-size: clamp(48px, 9vw, 78px);
+  line-height: 1;
+  filter: drop-shadow(0 9px 10px color-mix(in srgb, var(--foreground) 20%, transparent));
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.sr-left {
+  left: var(--sr-left-x);
+  top: var(--sr-left-y);
+}
+
+.sr-right {
+  left: var(--sr-right-x);
+  top: var(--sr-right-y);
+  transition: filter 120ms ease;
+}
+
+#stress-reliever.is-grabbing .sr-right {
+  filter: drop-shadow(0 4px 5px color-mix(in srgb, var(--foreground) 20%, transparent));
+}
+
+/* ------------------------------------------------------------ the squishy */
+
+.sr-orbit {
+  position: absolute;
+  z-index: 4;
+  left: var(--sr-x);
+  top: var(--sr-y);
+  width: 156px;
+  height: 140px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.sr-squishy {
+  position: absolute;
+  inset: 0;
+  transform-origin: 50% 50%;
+  filter: drop-shadow(0 16px 13px color-mix(in srgb, var(--foreground) 19%, transparent));
+  cursor: grab;
+  pointer-events: auto;
+  will-change: transform;
+}
+
+#stress-reliever.is-grabbing .sr-squishy {
+  cursor: grabbing;
+}
+
+.sr-object {
+  position: absolute;
+  inset: 0;
+  display: none;
+}
+
+.sr-squishy[data-kind="ball"] [data-shape="ball"],
+.sr-squishy[data-kind="cow"] [data-shape="cow"],
+.sr-squishy[data-kind="pizza"] [data-shape="pizza"] {
+  display: block;
+}
+
+/* Ball */
+
+.sr-ball {
+  border-radius: 48% 52% 46% 54% / 55% 46% 54% 45%;
+  background:
+    radial-gradient(circle at 34% 26%, color-mix(in srgb, var(--primary-foreground) 72%, transparent) 0 6%, transparent 7%),
+    radial-gradient(circle at 38% 30%, color-mix(in srgb, var(--series-1) 48%, var(--primary-foreground)) 0, var(--series-1) 35%, color-mix(in srgb, var(--series-1) 72%, var(--foreground)) 100%);
+  box-shadow:
+    inset -18px -20px 30px color-mix(in srgb, var(--foreground) 22%, transparent),
+    inset 12px 10px 24px color-mix(in srgb, var(--primary-foreground) 25%, transparent);
+}
+
+.sr-shine {
+  position: absolute;
+  width: 24%;
+  height: 15%;
+  left: 20%;
+  top: 16%;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--primary-foreground) 58%, transparent);
+  transform: rotate(-24deg);
+}
+
+.sr-dimple {
+  position: absolute;
+  width: 10px;
+  height: 8px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--foreground) 20%, transparent);
+}
+
+.sr-dimple-a { right: 25%; top: 31%; }
+.sr-dimple-b { left: 29%; bottom: 22%; }
+
+/* Cow */
+
+.sr-cow {
+  inset: 8px 3px 4px;
+  border-radius: 46% 54% 44% 56% / 52% 48% 55% 45%;
+  background: color-mix(in srgb, var(--card) 82%, var(--series-2));
+  box-shadow:
+    inset -14px -16px 24px color-mix(in srgb, var(--foreground) 16%, transparent),
+    inset 10px 9px 18px color-mix(in srgb, var(--primary-foreground) 18%, transparent);
+}
+
+.sr-cow-ear,
+.sr-cow-horn,
+.sr-cow-spot,
+.sr-cow-eye,
+.sr-cow-muzzle {
+  position: absolute;
+}
+
+.sr-cow-ear {
+  width: 34px;
+  height: 24px;
+  top: 10px;
+  border-radius: 70% 25% 70% 25%;
+  background: color-mix(in srgb, var(--series-2) 55%, var(--card));
+}
+
+.sr-cow-ear-l { left: -15px; transform: rotate(24deg); }
+.sr-cow-ear-r { right: -15px; transform: scaleX(-1) rotate(24deg); }
+
+.sr-cow-horn {
+  width: 13px;
+  height: 24px;
+  top: -11px;
+  border-radius: 80% 80% 25% 25%;
+  background: color-mix(in srgb, var(--series-3) 62%, var(--card));
+}
+
+.sr-cow-horn-l { left: 30px; transform: rotate(-18deg); }
+.sr-cow-horn-r { right: 30px; transform: rotate(18deg); }
+
+.sr-cow-spot {
+  border-radius: 48% 52% 58% 42%;
+  background: color-mix(in srgb, var(--foreground) 72%, var(--card));
+}
+
+.sr-cow-spot-a { width: 38px; height: 31px; left: 18px; top: 27px; transform: rotate(-19deg); }
+.sr-cow-spot-b { width: 29px; height: 38px; right: 17px; bottom: 24px; transform: rotate(22deg); }
+
+.sr-cow-eye {
+  width: 9px;
+  height: 12px;
+  top: 51px;
+  border-radius: 50%;
+  background: var(--foreground);
+}
+
+.sr-cow-eye-l { left: 48px; }
+.sr-cow-eye-r { right: 48px; }
+
+.sr-cow-muzzle {
+  width: 64px;
+  height: 39px;
+  left: 50%;
+  bottom: 17px;
+  border-radius: 48%;
+  background: color-mix(in srgb, var(--series-4) 50%, var(--card));
+  transform: translateX(-50%);
+}
+
+.sr-cow-muzzle i {
+  position: absolute;
+  width: 7px;
+  height: 6px;
+  top: 15px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--foreground) 65%, transparent);
+}
+
+.sr-cow-muzzle i:first-child { left: 18px; }
+.sr-cow-muzzle i:last-child { right: 18px; }
+
+/* Pizza */
+
+.sr-pizza {
+  inset: 2px 1px;
+  clip-path: polygon(50% 98%, 4% 18%, 9% 8%, 91% 8%, 96% 18%);
+  background: color-mix(in srgb, var(--series-3) 72%, var(--card));
+  box-shadow: inset -16px -10px 22px color-mix(in srgb, var(--foreground) 18%, transparent);
+}
+
+.sr-crust {
+  position: absolute;
+  left: 5%;
+  right: 5%;
+  top: 3%;
+  height: 22%;
+  border-radius: 46%;
+  background: color-mix(in srgb, var(--series-4) 72%, var(--card));
+  box-shadow: inset 0 -7px 9px color-mix(in srgb, var(--foreground) 14%, transparent);
+}
+
+.sr-pepper {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: var(--series-5);
+  box-shadow: inset -4px -4px 6px color-mix(in srgb, var(--foreground) 22%, transparent);
+}
+
+.sr-pepper-a { left: 30px; top: 43px; }
+.sr-pepper-b { right: 30px; top: 46px; }
+.sr-pepper-c { left: 66px; top: 82px; }
+
+.sr-cheese {
+  position: absolute;
+  width: 11px;
+  height: 8px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--primary-foreground) 72%, transparent);
+}
+
+.sr-cheese-a { left: 53px; top: 34px; transform: rotate(32deg); }
+.sr-cheese-b { right: 52px; top: 78px; transform: rotate(-18deg); }
+
+/* ---------------------------------------------------------------- responsive */
+
+@media (max-width: 520px) {
+  .sr-stage { height: 350px; }
+  .sr-orbit { width: 128px; height: 116px; }
+  .sr-hint { width: 90%; white-space: normal; text-align: center; }
+  .sr-cow-eye-l { left: 40px; }
+  .sr-cow-eye-r { right: 40px; }
+  .sr-cow-muzzle { width: 55px; height: 34px; }
+  .sr-pepper { width: 21px; height: 21px; }
+  .sr-pepper-c { left: 54px; top: 68px; }
+  .sr-badge { margin-left: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sr-right { transition: none; }
+}

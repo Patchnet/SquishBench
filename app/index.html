@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SquishBench — Stress Reliever</title>
+<meta name="description" content="A browser fidget toy: two hands and a squishy you can pull, squash, twist, and toss.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<main id="stress-reliever" aria-label="Interactive squishy stress reliever">
+  <header class="sr-head">
+    <h1>SquishBench</h1>
+    <p class="text-muted">
+      The left hand holds its ground; the right hand follows your pointer. Grab the squishy and
+      pull to stretch it, push to squash it, and slide sideways to twist it.
+    </p>
+  </header>
+
+  <div class="sr-controls" role="group" aria-label="Choose a squishy object">
+    <button type="button" class="btn btn-primary" data-kind="ball" aria-pressed="true">Ball</button>
+    <button type="button" class="btn" data-kind="cow" aria-pressed="false">Cow</button>
+    <button type="button" class="btn" data-kind="pizza" aria-pressed="false">Pizza</button>
+    <button type="button" class="btn btn-ghost" id="sr-toss">Toss</button>
+    <span class="sr-badge" id="sr-status" aria-live="polite">Floating</span>
+  </div>
+
+  <div class="sr-stage" id="sr-stage" role="application"
+       aria-label="Move the right hand with the pointer. Hold the squishy to pull, push, and twist it. Right-click to toss.">
+    <div class="sr-hint">Hold + move to squish · Right-click (or Toss) to throw between hands</div>
+
+    <div class="sr-hand sr-left" id="sr-left" aria-hidden="true">🫱</div>
+
+    <div class="sr-orbit" id="sr-orbit">
+      <div class="sr-squishy" id="sr-squishy" data-kind="ball">
+        <div class="sr-object sr-ball" data-shape="ball" aria-hidden="true">
+          <span class="sr-shine"></span>
+          <span class="sr-dimple sr-dimple-a"></span>
+          <span class="sr-dimple sr-dimple-b"></span>
+        </div>
+        <div class="sr-object sr-cow" data-shape="cow" aria-hidden="true">
+          <span class="sr-cow-ear sr-cow-ear-l"></span>
+          <span class="sr-cow-ear sr-cow-ear-r"></span>
+          <span class="sr-cow-horn sr-cow-horn-l"></span>
+          <span class="sr-cow-horn sr-cow-horn-r"></span>
+          <span class="sr-cow-spot sr-cow-spot-a"></span>
+          <span class="sr-cow-spot sr-cow-spot-b"></span>
+          <span class="sr-cow-eye sr-cow-eye-l"></span>
+          <span class="sr-cow-eye sr-cow-eye-r"></span>
+          <span class="sr-cow-muzzle"><i></i><i></i></span>
+        </div>
+        <div class="sr-object sr-pizza" data-shape="pizza" aria-hidden="true">
+          <span class="sr-crust"></span>
+          <span class="sr-pepper sr-pepper-a"></span>
+          <span class="sr-pepper sr-pepper-b"></span>
+          <span class="sr-pepper sr-pepper-c"></span>
+          <span class="sr-cheese sr-cheese-a"></span>
+          <span class="sr-cheese sr-cheese-b"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sr-hand sr-right" id="sr-right" aria-hidden="true">🫲</div>
+  </div>
+
+  <p class="sr-readout text-muted" id="sr-readout">Ball · relaxed</p>
+</main>
+
+<script src="main.js" defer></script>
+</body>
+</html>
