@@ -1,0 +1,1605 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Stress Reliever</title>
+<style>:root{color-scheme:light dark;background:light-dark(rgb(255 255 255), rgb(24 24 24))}html,body{margin:0}body{box-sizing:border-box;padding:1rem;background:inherit}iframe{display:block;width:100%;max-width:736px;height:calc(100vh - 2rem);margin:0 auto;border:0}</style>
+</head>
+<body>
+<iframe sandbox="allow-scripts" referrerpolicy="no-referrer" title="Stress Reliever" srcdoc="&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+&lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;default-src &#x27;none&#x27;; script-src &#x27;unsafe-inline&#x27; &#x27;unsafe-eval&#x27; &#x27;wasm-unsafe-eval&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src &#x27;unsafe-inline&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;&quot;&gt;
+&lt;title&gt;Stress Reliever&lt;/title&gt;
+&lt;style&gt;:root {
+  color-scheme: light dark;
+  background-color: var(--background) !important;
+
+  /* Agent-facing contract; keep in sync with SKILL.md. */
+  --background: light-dark(rgb(255 255 255), rgb(24 24 24));
+  --foreground: light-dark(rgb(26 28 31), rgb(255 255 255));
+  --card: color-mix(in oklab, var(--foreground) 5%, transparent);
+  --card-foreground: var(--foreground);
+  --popover: light-dark(rgb(255 255 255), rgb(45 45 45));
+  --popover-foreground: var(--foreground);
+  --primary: light-dark(rgb(51 156 255), rgb(131 195 255));
+  --primary-foreground: light-dark(rgb(255 255 255), rgb(13 13 13));
+  --secondary: light-dark(rgb(255 255 255 / 96%), rgb(54 54 54 / 96%));
+  --secondary-foreground: var(--foreground);
+  --muted: color-mix(in srgb, var(--foreground) 10%, transparent);
+  --muted-foreground: light-dark(
+    rgb(26 28 31 / 49.4%),
+    rgb(255 255 255 / 49.8%)
+  );
+  --accent: light-dark(rgb(229 242 255), rgb(13 39 63));
+  --accent-foreground: var(--primary);
+  --destructive: light-dark(rgb(226 85 7), rgb(255 133 73));
+  --border: light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%));
+  --input: light-dark(
+    rgb(26 28 31 / 11.8%),
+    color-mix(in oklab, rgb(0 0 0) 10%, transparent)
+  );
+  --ring: light-dark(rgb(51 156 255), rgb(131 195 255 / 76%));
+  --font-size-base: 14px;
+  --viz-series-1: var(--primary);
+  --viz-series-2: light-dark(rgb(243 136 59), rgb(245 154 86));
+  --viz-series-3: light-dark(rgb(93 201 119), rgb(116 213 139));
+  --viz-series-4: light-dark(rgb(235 119 177), rgb(240 143 192));
+  --viz-series-5: light-dark(rgb(155 121 236), rgb(170 145 239));
+  --viz-series-6: light-dark(rgb(58 185 177), rgb(90 203 194));
+
+  /* Internal implementation variables; not part of the agent contract. */
+  --font-sans: -apple-system, system-ui, &quot;Segoe UI&quot;, sans-serif;
+  --font-mono:
+    ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;,
+    monospace;
+  --font-size-normal: max(11px, var(--font-size-base));
+  --font-size-tooltip: calc(var(--font-size-base) - 1px);
+  --font-size-small: max(11px, calc(var(--font-size-base) - 2px));
+  --font-size-h1: calc(var(--font-size-normal) * 1.7142857143);
+  --font-size-h2: calc(var(--font-size-normal) * 1.4285714286);
+  --font-size-h3: calc(var(--font-size-normal) * 1.2857142857);
+  --font-weight-normal: 430;
+  --font-weight-medium: 500;
+  --line-height-normal: calc(var(--font-size-normal) * 1.5);
+  --line-height-tooltip: calc(var(--font-size-tooltip) * 1.4285714286);
+  --line-height-small: calc(var(--font-size-small) + 4px);
+  --radius: 12.5px;
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-2xl: calc(var(--radius) * 1.6);
+  --radius-full: 9999px;
+  --shadow-sm: 0 1px 2px -1px rgb(0 0 0 / 8%);
+  --checkmark-image: url(&quot;data:image/svg+xml,%3Csvg xmlns=&#x27;http://www.w3.org/2000/svg&#x27; viewBox=&#x27;0 0 17 17&#x27;%3E%3Cpath d=&#x27;M12.8961 3.64101C13.1297 3.41418 13.4984 3.37523 13.7779 3.56581C14.0571 3.75635 14.1554 4.11331 14.0299 4.41347L13.9615 4.53847L7.71151 13.7045C7.59411 13.8767 7.4063 13.9877 7.19881 14.0072C6.99136 14.0267 6.78564 13.9533 6.63826 13.806L2.88826 10.056L2.79842 9.9457C2.6192 9.67407 2.64927 9.30496 2.88826 9.06581C3.12738 8.82669 3.49647 8.79676 3.76815 8.97597L3.8785 9.06581L7.03084 12.2182L12.8053 3.74941L12.8961 3.64101Z&#x27;/%3E%3C/svg%3E&quot;);
+
+  /* Legacy aliases; not part of the current agent contract. */
+  --viz-bg: transparent;
+  --viz-panel: var(--card);
+  --viz-border: var(--border);
+  --viz-text: var(--foreground);
+  --viz-muted: var(--muted-foreground);
+  --viz-accent: var(--primary);
+  --viz-accent-text: var(--primary-foreground);
+  --viz-accent-bg: var(--accent);
+  --viz-font-size: var(--font-size-base);
+  --viz-warning: var(--destructive);
+  --color-background-primary: var(--background);
+  --color-text-primary: var(--foreground);
+  --color-border-secondary: var(--border);
+}
+
+:root[data-theme=&quot;light&quot;] {
+  color-scheme: light;
+}
+
+:root[data-theme=&quot;dark&quot;] {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html &gt; body {
+  margin: 0;
+  padding: 5px;
+  color: var(--foreground);
+  background: transparent !important;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-normal);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+}
+
+a {
+  color: color-mix(in srgb, var(--viz-accent) 80%, var(--viz-text) 20%);
+  cursor: pointer;
+  font-weight: var(--viz-font-weight-medium);
+  text-decoration: none;
+  text-underline-offset: 2px;
+}
+
+a:is(:hover, :focus-visible) {
+  text-decoration-line: underline;
+  text-decoration-style: dashed;
+  text-decoration-thickness: 0.5px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-block: 0;
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.3;
+}
+
+b,
+strong,
+th {
+  font-weight: var(--font-weight-medium);
+}
+
+code:not(pre code) {
+  display: inline;
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  corner-shape: superellipse(1.5);
+  background: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  overflow-wrap: anywhere;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  word-break: break-word;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--foreground);
+  font: inherit;
+  text-align: start;
+}
+
+.table :is(th, td) {
+  padding-block: 10px;
+  padding-inline: 0 24px;
+  overflow-wrap: anywhere;
+  border-bottom: 1px solid var(--border);
+  text-align: start;
+  vertical-align: top;
+}
+
+.table-responsive &gt; .table :is(th, td) {
+  overflow-wrap: break-word;
+}
+
+.table :is(th, td):last-child {
+  padding-inline-end: 0;
+}
+
+.table :is(caption, thead th) {
+  font-weight: 600;
+}
+
+.table thead th {
+  padding-block: 8px;
+  border-bottom-color: color-mix(in srgb, var(--foreground) 16%, transparent);
+}
+
+.table tbody tr:last-child :is(th, td) {
+  border-bottom: 0;
+}
+
+.table.table-sm :is(th, td) {
+  padding-block: 6px;
+}
+
+.table.table-sm :is(th, td):not(:last-child) {
+  padding-inline-end: 16px;
+}
+
+.table :is(.text-end, [align=&quot;right&quot;]) {
+  text-align: end;
+  font-variant-numeric: tabular-nums;
+}
+
+.table :is(.text-center, [align=&quot;center&quot;]) {
+  text-align: center;
+}
+
+.table .text-nowrap {
+  white-space: nowrap;
+}
+
+#widget {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  padding: 0;
+  background: transparent !important;
+}
+
+.card {
+  min-width: 0;
+  padding: 12px;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  border-radius: var(--radius-2xl);
+  corner-shape: superellipse(1.5);
+  color: var(--card-foreground);
+  background: var(--card);
+}
+
+#widget &gt; :not(.card) {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.tooltip {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  width: max-content;
+  max-width: min(
+    20rem,
+    var(--tooltip-available-width, calc(100vw - 10px)),
+    calc(100vw - 10px)
+  );
+  max-height: min(
+    var(--tooltip-available-height, calc(100vh - 10px)),
+    calc(100vh - 10px)
+  );
+  padding: 4px 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--popover-foreground);
+  background: var(--popover);
+  box-shadow: none;
+  font-size: var(--font-size-tooltip);
+  line-height: var(--line-height-tooltip);
+  overflow-wrap: break-word;
+  white-space: normal;
+  pointer-events: none;
+  user-select: none;
+}
+
+.viz-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(max(180px, 24%), 1fr));
+  gap: 10px;
+}
+
+.viz-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.viz-stat-value {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+.viz-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.viz-badge {
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  color: var(--accent-foreground);
+  background: var(--accent);
+  font-weight: var(--font-weight-medium);
+}
+
+small,
+.text-small,
+.viz-badge {
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
+
+.text-muted {
+  color: var(--muted-foreground);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.viz-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.viz-controls &gt; .form-label {
+  display: grid;
+  min-width: min(100%, 260px);
+  flex: 1 1 280px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 2px 12px;
+  margin-bottom: 0;
+}
+
+.viz-controls &gt; .form-label &gt; :is(.form-control, .form-range, .form-select) {
+  grid-column: 1 / -1;
+}
+
+.btn,
+.form-check-input,
+.form-control,
+.form-range,
+.form-select {
+  font: inherit;
+}
+
+.btn {
+  appearance: button;
+  display: inline-flex;
+  inline-size: fit-content;
+  max-inline-size: 100%;
+  min-height: 28px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin: 0;
+  padding: 0 8px;
+  -webkit-app-region: no-drag;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+  cursor: var(--cursor-interaction, pointer);
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+.btn:is(.btn-block, .viz-tile) {
+  inline-size: 100%;
+}
+
+.btn.viz-tile {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+a.btn {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn:not(:disabled):hover {
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.btn-primary {
+  border-color: transparent;
+  color: var(--primary-foreground);
+  background: var(--foreground);
+  background-clip: padding-box;
+}
+
+.btn-primary .text-muted {
+  color: color-mix(in srgb, var(--primary-foreground) 50%, transparent);
+}
+
+.btn-primary:not(:disabled):hover {
+  background: color-mix(in srgb, var(--foreground) 80%, transparent);
+  background-clip: padding-box;
+}
+
+.btn-ghost {
+  border-color: transparent;
+  color: var(--muted-foreground);
+  background: transparent;
+}
+
+.btn-ghost:not(:disabled):hover {
+  color: var(--foreground);
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+[data-lucide] {
+  stroke-width: 1.6;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--foreground);
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  padding: 0 8px;
+  outline: none;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--foreground);
+  background: var(--secondary);
+}
+
+.form-control::placeholder {
+  color: var(--muted-foreground);
+}
+
+.form-control[type=&quot;file&quot;] {
+  padding: 0;
+  overflow: hidden;
+  cursor: var(--cursor-interaction, pointer);
+}
+
+.form-control[type=&quot;file&quot;]::file-selector-button {
+  min-height: 26px;
+  margin-right: 8px;
+  padding: 0 8px;
+  border: 0;
+  border-right: 1px solid var(--input);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+  cursor: inherit;
+  font: inherit;
+}
+
+.form-control[type=&quot;file&quot;]:not(:disabled):hover::file-selector-button {
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.form-control-color[type=&quot;color&quot;] {
+  width: 40px;
+  height: 28px;
+  padding: 3px;
+  cursor: var(--cursor-interaction, pointer);
+}
+
+.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch {
+  border: 0;
+  border-radius: calc(var(--radius-lg) - 4px);
+  corner-shape: superellipse(1.5);
+}
+
+textarea.form-control {
+  height: auto;
+  min-height: 72px;
+  padding: 8px 10px;
+  resize: vertical;
+}
+
+.form-control:focus-visible {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-control:disabled,
+.form-select:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.form-select {
+  appearance: none;
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  margin: 0;
+  padding: 0 32px 0 8px;
+  outline: none;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--foreground);
+  background-color: var(--secondary);
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--muted-foreground) 50%),
+    linear-gradient(135deg, var(--muted-foreground) 50%, transparent 50%);
+  background-position:
+    calc(100% - 14px) 50%,
+    calc(100% - 10px) 50%;
+  background-repeat: no-repeat;
+  background-size: 4px 4px;
+  cursor: var(--cursor-interaction, default);
+}
+
+.form-select:not(:disabled):hover {
+  background-color: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.form-select:focus-visible {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-check {
+  display: flex;
+  min-height: 20px;
+  align-items: center;
+  gap: 6px;
+}
+
+.form-check-input {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  flex: 0 0 auto;
+  margin: 0;
+  border: 1px solid var(--input);
+  color: var(--primary-foreground);
+  background-color: transparent;
+  cursor: var(--cursor-interaction, default);
+  transition:
+    background-color 150ms,
+    border-color 150ms,
+    box-shadow 150ms;
+}
+
+.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;] {
+  border-color: var(--input);
+  border-radius: var(--radius-sm);
+  corner-shape: superellipse(1.5);
+  background-color: var(--secondary);
+  box-shadow: var(--shadow-sm);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input:not(:disabled):not(:checked):hover {
+  background-color: var(--card);
+}
+
+.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;]:checked {
+  border-color: var(--primary);
+  background-color: var(--primary);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input[type=&quot;checkbox&quot;]:checked::before {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-foreground);
+  content: &quot;&quot;;
+  mask: var(--checkmark-image) center / 12px 12px no-repeat;
+}
+
+.form-check-input[type=&quot;radio&quot;] {
+  width: 14px;
+  height: 14px;
+  border-radius: var(--radius-full);
+}
+
+.form-check-input[type=&quot;radio&quot;]:checked {
+  border: 2px solid var(--primary);
+  background:
+    radial-gradient(circle, var(--primary-foreground) 0 2.5px, transparent 3px),
+    var(--primary);
+}
+
+.form-check:not(.form-switch) .form-check-input:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+}
+
+.form-switch .form-check-input:disabled,
+.form-switch .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.form-check-label {
+  color: var(--foreground);
+  cursor: var(--cursor-interaction, default);
+}
+
+.form-switch .form-check-input {
+  position: relative;
+  width: 32px;
+  height: 20px;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--muted);
+  box-shadow: none;
+  transition: background-color 200ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.form-switch .form-check-input::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+  border: 1px solid light-dark(var(--primary-foreground), var(--foreground));
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+  box-shadow: var(--shadow-sm);
+  content: &quot;&quot;;
+  transform: translate(2px, -50%);
+  transition: transform 200ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.form-switch .form-check-input:checked {
+  background: var(--primary);
+}
+
+.form-switch .form-check-input:checked::before {
+  transform: translate(14px, -50%);
+}
+
+.form-switch .form-check-input:focus-visible {
+  box-shadow: 0 0 0 2px var(--ring);
+}
+
+.form-range {
+  appearance: none;
+  display: block;
+  width: 100%;
+  height: 28px;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: 0;
+  accent-color: var(--primary);
+  background: linear-gradient(
+      color-mix(in srgb, var(--foreground) 7%, transparent),
+      color-mix(in srgb, var(--foreground) 7%, transparent)
+    )
+    center / 100% 2px no-repeat;
+}
+
+.form-range::-webkit-slider-runnable-track {
+  height: 28px;
+  background: transparent;
+}
+
+.form-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  margin-top: 4px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+}
+
+.form-range:focus-visible::-webkit-slider-thumb {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-range::-moz-range-track {
+  height: 28px;
+  background: transparent;
+}
+
+.form-range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+}
+
+.form-range:focus-visible::-moz-range-thumb {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-range:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.btn:not(.btn-primary, .viz-tile):is(
+    [aria-pressed=&quot;true&quot;],
+    [aria-selected=&quot;true&quot;],
+    .is-selected
+  ) {
+  border-color: var(--primary);
+  color: var(--primary-foreground);
+  background: var(--primary);
+}
+
+.btn.viz-tile:is([aria-pressed=&quot;true&quot;], [aria-selected=&quot;true&quot;], .is-selected) {
+  border-color: var(--primary);
+  box-shadow: inset 0 0 0 1px var(--primary);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+#widget &gt; svg {
+  width: 100%;
+}
+
+.text-warning,
+.text-destructive {
+  color: var(--destructive);
+}
+
+html&gt;body{padding:0}&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;stress-reliever&quot; aria-label=&quot;Interactive squishy stress reliever&quot;&gt;
+  &lt;div class=&quot;viz-controls&quot; aria-label=&quot;Choose a squishy object&quot;&gt;
+    &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; data-kind=&quot;ball&quot; aria-pressed=&quot;true&quot;&gt;Ball&lt;/button&gt;
+    &lt;button type=&quot;button&quot; class=&quot;btn&quot; data-kind=&quot;cow&quot; aria-pressed=&quot;false&quot;&gt;Cow&lt;/button&gt;
+    &lt;button type=&quot;button&quot; class=&quot;btn&quot; data-kind=&quot;pizza&quot; aria-pressed=&quot;false&quot;&gt;Pizza&lt;/button&gt;
+    &lt;span class=&quot;viz-badge&quot; id=&quot;sr-status&quot; aria-live=&quot;polite&quot;&gt;Floating&lt;/span&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;card sr-stage&quot; id=&quot;sr-stage&quot; role=&quot;application&quot; aria-label=&quot;Move the right hand with the pointer. Hold the squishy to pull, push, and twist it. Right-click to toss.&quot;&gt;
+    &lt;div class=&quot;sr-hint&quot;&gt;Hold + move to squish · Right-click to toss&lt;/div&gt;
+    &lt;div class=&quot;sr-hand sr-left&quot; id=&quot;sr-left&quot; aria-hidden=&quot;true&quot;&gt;🫱&lt;/div&gt;
+    &lt;div class=&quot;sr-orbit&quot; id=&quot;sr-orbit&quot;&gt;
+      &lt;div class=&quot;sr-squishy&quot; id=&quot;sr-squishy&quot; data-kind=&quot;ball&quot;&gt;
+        &lt;div class=&quot;sr-object sr-ball&quot; data-shape=&quot;ball&quot; aria-hidden=&quot;true&quot;&gt;
+          &lt;span class=&quot;sr-shine&quot;&gt;&lt;/span&gt;
+          &lt;span class=&quot;sr-dimple sr-dimple-a&quot;&gt;&lt;/span&gt;
+          &lt;span class=&quot;sr-dimple sr-dimple-b&quot;&gt;&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;sr-object sr-cow&quot; data-shape=&quot;cow&quot; aria-hidden=&quot;true&quot;&gt;
+          &lt;span class=&quot;sr-cow-ear sr-cow-ear-l&quot;&gt;&lt;/span&gt;
+          &lt;span class=&quot;sr-cow-ear sr-cow-ear-r&quot;&gt;&lt;/span&gt;
+          &lt;span class=&quot;sr-cow-horn sr-cow-horn-l&quot;&gt;&lt;/span&gt;
+          &lt;span class=&quot;sr-cow-horn sr-cow-horn-r&quot;&gt;&lt;/span&gt;
+          &lt;span class=&quot;sr-cow-spot sr-cow-spot-a&quot;&gt;&lt;/span&gt;
+          &lt;span class=&quot;sr-cow-spot sr-cow-spot-b&quot;&gt;&lt;/span&gt;
+          &lt;span class=&quot;sr-cow-eye sr-cow-eye-l&quot;&gt;&lt;/span&gt;
+          &lt;span class=&quot;sr-cow-eye sr-cow-eye-r&quot;&gt;&lt;/span&gt;
+          &lt;span class=&quot;sr-cow-muzzle&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;sr-object sr-pizza&quot; data-shape=&quot;pizza&quot; aria-hidden=&quot;true&quot;&gt;
+          &lt;span class=&quot;sr-crust&quot;&gt;&lt;/span&gt;
+          &lt;span class=&quot;sr-pepper sr-pepper-a&quot;&gt;&lt;/span&gt;
+          &lt;span class=&quot;sr-pepper sr-pepper-b&quot;&gt;&lt;/span&gt;
+          &lt;span class=&quot;sr-pepper sr-pepper-c&quot;&gt;&lt;/span&gt;
+          &lt;span class=&quot;sr-cheese sr-cheese-a&quot;&gt;&lt;/span&gt;
+          &lt;span class=&quot;sr-cheese sr-cheese-b&quot;&gt;&lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;sr-hand sr-right&quot; id=&quot;sr-right&quot; aria-hidden=&quot;true&quot;&gt;🫲&lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;sr-readout text-muted&quot; id=&quot;sr-readout&quot;&gt;Ball · relaxed&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+  #stress-reliever {
+    --sr-x: 50%;
+    --sr-y: 52%;
+    --sr-right-x: 78%;
+    --sr-right-y: 52%;
+    color: var(--foreground);
+    width: 100%;
+    user-select: none;
+  }
+
+  #stress-reliever .viz-controls {
+    margin-bottom: 12px;
+  }
+
+  #stress-reliever .sr-stage {
+    position: relative;
+    height: 420px;
+    min-height: 340px;
+    overflow: hidden;
+    cursor: crosshair;
+    touch-action: none;
+    background:
+      radial-gradient(circle at 52% 45%, color-mix(in srgb, var(--viz-series-1) 10%, transparent), transparent 34%),
+      linear-gradient(135deg, color-mix(in srgb, var(--muted) 56%, transparent), color-mix(in srgb, var(--background) 70%, transparent));
+  }
+
+  #stress-reliever .sr-stage::before {
+    content: &quot;&quot;;
+    position: absolute;
+    inset: 0;
+    opacity: .32;
+    background-image: radial-gradient(color-mix(in srgb, var(--foreground) 20%, transparent) 1px, transparent 1px);
+    background-size: 22px 22px;
+    pointer-events: none;
+  }
+
+  #stress-reliever .sr-hint {
+    position: absolute;
+    left: 50%;
+    bottom: 14px;
+    transform: translateX(-50%);
+    color: var(--muted-foreground);
+    white-space: nowrap;
+    pointer-events: none;
+  }
+
+  #stress-reliever .sr-hand {
+    position: absolute;
+    z-index: 8;
+    font-size: clamp(48px, 9vw, 78px);
+    line-height: 1;
+    filter: drop-shadow(0 9px 10px color-mix(in srgb, var(--foreground) 20%, transparent));
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+
+  #stress-reliever .sr-left {
+    left: 16%;
+    top: 52%;
+  }
+
+  #stress-reliever .sr-right {
+    left: var(--sr-right-x);
+    top: var(--sr-right-y);
+    transition: filter 120ms ease;
+  }
+
+  #stress-reliever.is-grabbing .sr-right {
+    filter: drop-shadow(0 4px 5px color-mix(in srgb, var(--foreground) 20%, transparent));
+  }
+
+  #stress-reliever .sr-orbit {
+    position: absolute;
+    z-index: 4;
+    left: var(--sr-x);
+    top: var(--sr-y);
+    width: 156px;
+    height: 140px;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+
+  #stress-reliever .sr-squishy {
+    position: absolute;
+    inset: 0;
+    cursor: grab;
+    pointer-events: auto;
+    transform-origin: 50% 50%;
+    will-change: transform;
+    filter: drop-shadow(0 16px 13px color-mix(in srgb, var(--foreground) 19%, transparent));
+  }
+
+  #stress-reliever.is-grabbing .sr-squishy {
+    cursor: grabbing;
+  }
+
+  #stress-reliever .sr-object {
+    position: absolute;
+    inset: 0;
+    display: none;
+  }
+
+  #stress-reliever .sr-squishy[data-kind=&quot;ball&quot;] [data-shape=&quot;ball&quot;],
+  #stress-reliever .sr-squishy[data-kind=&quot;cow&quot;] [data-shape=&quot;cow&quot;],
+  #stress-reliever .sr-squishy[data-kind=&quot;pizza&quot;] [data-shape=&quot;pizza&quot;] {
+    display: block;
+  }
+
+  #stress-reliever .sr-ball {
+    border-radius: 48% 52% 46% 54% / 55% 46% 54% 45%;
+    background:
+      radial-gradient(circle at 34% 26%, color-mix(in srgb, var(--primary-foreground) 72%, transparent) 0 6%, transparent 7%),
+      radial-gradient(circle at 38% 30%, color-mix(in srgb, var(--viz-series-1) 48%, var(--primary-foreground)) 0, var(--viz-series-1) 35%, color-mix(in srgb, var(--viz-series-1) 72%, var(--foreground)) 100%);
+    box-shadow:
+      inset -18px -20px 30px color-mix(in srgb, var(--foreground) 22%, transparent),
+      inset 12px 10px 24px color-mix(in srgb, var(--primary-foreground) 25%, transparent);
+  }
+
+  #stress-reliever .sr-shine {
+    position: absolute;
+    width: 24%;
+    height: 15%;
+    left: 20%;
+    top: 16%;
+    border-radius: 50%;
+    transform: rotate(-24deg);
+    background: color-mix(in srgb, var(--primary-foreground) 58%, transparent);
+  }
+
+  #stress-reliever .sr-dimple {
+    position: absolute;
+    width: 10px;
+    height: 8px;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--foreground) 20%, transparent);
+  }
+
+  #stress-reliever .sr-dimple-a { right: 25%; top: 31%; }
+  #stress-reliever .sr-dimple-b { left: 29%; bottom: 22%; }
+
+  #stress-reliever .sr-cow {
+    inset: 8px 3px 4px;
+    border-radius: 46% 54% 44% 56% / 52% 48% 55% 45%;
+    background: color-mix(in srgb, var(--card) 82%, var(--viz-series-2));
+    box-shadow:
+      inset -14px -16px 24px color-mix(in srgb, var(--foreground) 16%, transparent),
+      inset 10px 9px 18px color-mix(in srgb, var(--primary-foreground) 18%, transparent);
+  }
+
+  #stress-reliever .sr-cow-ear,
+  #stress-reliever .sr-cow-horn,
+  #stress-reliever .sr-cow-spot,
+  #stress-reliever .sr-cow-eye,
+  #stress-reliever .sr-cow-muzzle {
+    position: absolute;
+  }
+
+  #stress-reliever .sr-cow-ear {
+    width: 34px;
+    height: 24px;
+    top: 10px;
+    border-radius: 70% 25% 70% 25%;
+    background: color-mix(in srgb, var(--viz-series-2) 55%, var(--card));
+  }
+  #stress-reliever .sr-cow-ear-l { left: -15px; transform: rotate(24deg); }
+  #stress-reliever .sr-cow-ear-r { right: -15px; transform: scaleX(-1) rotate(24deg); }
+  #stress-reliever .sr-cow-horn {
+    width: 13px;
+    height: 24px;
+    top: -11px;
+    border-radius: 80% 80% 25% 25%;
+    background: color-mix(in srgb, var(--viz-series-3) 62%, var(--card));
+  }
+  #stress-reliever .sr-cow-horn-l { left: 30px; transform: rotate(-18deg); }
+  #stress-reliever .sr-cow-horn-r { right: 30px; transform: rotate(18deg); }
+  #stress-reliever .sr-cow-spot {
+    background: color-mix(in srgb, var(--foreground) 72%, var(--card));
+    border-radius: 48% 52% 58% 42%;
+  }
+  #stress-reliever .sr-cow-spot-a { width: 38px; height: 31px; left: 18px; top: 27px; transform: rotate(-19deg); }
+  #stress-reliever .sr-cow-spot-b { width: 29px; height: 38px; right: 17px; bottom: 24px; transform: rotate(22deg); }
+  #stress-reliever .sr-cow-eye {
+    width: 9px;
+    height: 12px;
+    top: 51px;
+    border-radius: 50%;
+    background: var(--foreground);
+  }
+  #stress-reliever .sr-cow-eye-l { left: 48px; }
+  #stress-reliever .sr-cow-eye-r { right: 48px; }
+  #stress-reliever .sr-cow-muzzle {
+    width: 64px;
+    height: 39px;
+    left: 50%;
+    bottom: 17px;
+    transform: translateX(-50%);
+    border-radius: 48%;
+    background: color-mix(in srgb, var(--viz-series-4) 50%, var(--card));
+  }
+  #stress-reliever .sr-cow-muzzle i {
+    position: absolute;
+    width: 7px;
+    height: 6px;
+    top: 15px;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--foreground) 65%, transparent);
+  }
+  #stress-reliever .sr-cow-muzzle i:first-child { left: 18px; }
+  #stress-reliever .sr-cow-muzzle i:last-child { right: 18px; }
+
+  #stress-reliever .sr-pizza {
+    inset: 2px 1px;
+    clip-path: polygon(50% 98%, 4% 18%, 9% 8%, 91% 8%, 96% 18%);
+    background: color-mix(in srgb, var(--viz-series-3) 72%, var(--card));
+    box-shadow: inset -16px -10px 22px color-mix(in srgb, var(--foreground) 18%, transparent);
+  }
+
+  #stress-reliever .sr-crust {
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    top: 3%;
+    height: 22%;
+    border-radius: 46%;
+    background: color-mix(in srgb, var(--viz-series-4) 72%, var(--card));
+    box-shadow: inset 0 -7px 9px color-mix(in srgb, var(--foreground) 14%, transparent);
+  }
+
+  #stress-reliever .sr-pepper {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: var(--viz-series-5);
+    box-shadow: inset -4px -4px 6px color-mix(in srgb, var(--foreground) 22%, transparent);
+  }
+  #stress-reliever .sr-pepper-a { left: 30px; top: 43px; }
+  #stress-reliever .sr-pepper-b { right: 30px; top: 46px; }
+  #stress-reliever .sr-pepper-c { left: 66px; top: 82px; }
+  #stress-reliever .sr-cheese {
+    position: absolute;
+    width: 11px;
+    height: 8px;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--primary-foreground) 72%, transparent);
+  }
+  #stress-reliever .sr-cheese-a { left: 53px; top: 34px; transform: rotate(32deg); }
+  #stress-reliever .sr-cheese-b { right: 52px; top: 78px; transform: rotate(-18deg); }
+
+  #stress-reliever .sr-readout {
+    margin-top: 9px;
+    text-align: center;
+  }
+
+  @media (max-width: 520px) {
+    #stress-reliever .sr-stage { height: 350px; }
+    #stress-reliever .sr-left { left: 12%; }
+    #stress-reliever .sr-orbit { width: 128px; height: 116px; }
+    #stress-reliever .sr-hint { white-space: normal; width: 90%; text-align: center; }
+    #stress-reliever .sr-cow-eye-l { left: 40px; }
+    #stress-reliever .sr-cow-eye-r { right: 40px; }
+    #stress-reliever .sr-cow-muzzle { width: 55px; height: 34px; }
+    #stress-reliever .sr-pepper { width: 21px; height: 21px; }
+    #stress-reliever .sr-pepper-c { left: 54px; top: 68px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #stress-reliever .sr-right { transition: none; }
+  }
+&lt;/style&gt;
+
+&lt;script&gt;
+(() =&gt; {
+  const root = document.getElementById(&#x27;stress-reliever&#x27;);
+  if (!root || root.dataset.ready === &#x27;true&#x27;) return;
+  root.dataset.ready = &#x27;true&#x27;;
+
+  const stage = document.getElementById(&#x27;sr-stage&#x27;);
+  const orbit = document.getElementById(&#x27;sr-orbit&#x27;);
+  const squishy = document.getElementById(&#x27;sr-squishy&#x27;);
+  const status = document.getElementById(&#x27;sr-status&#x27;);
+  const readout = document.getElementById(&#x27;sr-readout&#x27;);
+  const buttons = Array.from(root.querySelectorAll(&#x27;button[data-kind]&#x27;));
+  const reducedMotion = window.matchMedia(&#x27;(prefers-reduced-motion: reduce)&#x27;).matches;
+
+  const state = {
+    kind: &#x27;ball&#x27;,
+    pointerX: 0.78,
+    pointerY: 0.52,
+    objectX: 0.50,
+    objectY: 0.52,
+    grabbing: false,
+    throwing: false,
+    caughtBy: null,
+    startDistance: 1,
+    lastAngle: 0,
+    tossTarget: &#x27;right&#x27;,
+    idleStart: performance.now()
+  };
+
+  const labels = { ball: &#x27;Ball&#x27;, cow: &#x27;Cow&#x27;, pizza: &#x27;Pizza&#x27; };
+  const clamp = (value, min, max) =&gt; Math.min(max, Math.max(min, value));
+
+  function stagePoint(event) {
+    const rect = stage.getBoundingClientRect();
+    return {
+      x: clamp((event.clientX - rect.left) / rect.width, 0.03, 0.97),
+      y: clamp((event.clientY - rect.top) / rect.height, 0.06, 0.94),
+      width: rect.width,
+      height: rect.height
+    };
+  }
+
+  function leftPoint() {
+    return { x: stage.clientWidth &lt;= 520 ? 0.12 : 0.16, y: 0.52 };
+  }
+
+  function setPointer(point) {
+    state.pointerX = point.x;
+    state.pointerY = point.y;
+    root.style.setProperty(&#x27;--sr-right-x&#x27;, `${point.x * 100}%`);
+    root.style.setProperty(&#x27;--sr-right-y&#x27;, `${point.y * 100}%`);
+  }
+
+  function setObject(x, y) {
+    state.objectX = x;
+    state.objectY = y;
+    root.style.setProperty(&#x27;--sr-x&#x27;, `${x * 100}%`);
+    root.style.setProperty(&#x27;--sr-y&#x27;, `${y * 100}%`);
+  }
+
+  function relaxedTransform() {
+    squishy.style.transform = &#x27;rotate(0deg) scaleX(1) scaleY(1) skewY(0deg)&#x27;;
+  }
+
+  function updateGrip() {
+    const left = leftPoint();
+    const dx = (state.pointerX - left.x) * stage.clientWidth;
+    const dy = (state.pointerY - left.y) * stage.clientHeight;
+    const distance = Math.max(20, Math.hypot(dx, dy));
+    const ratio = clamp(distance / state.startDistance, 0.48, 1.85);
+    const angle = Math.atan2(dy, dx) * 180 / Math.PI;
+    const side = clamp(dy / 170, -1, 1);
+    const scaleX = ratio;
+    const scaleY = clamp(1.18 - (ratio - 0.5) * 0.34, 0.68, 1.22);
+    const twist = side * 19;
+
+    state.lastAngle = angle;
+    setObject((left.x + state.pointerX) / 2, (left.y + state.pointerY) / 2);
+    squishy.style.transform = `rotate(${angle}deg) scaleX(${scaleX}) scaleY(${scaleY}) skewY(${twist}deg)`;
+
+    let action = &#x27;relaxed&#x27;;
+    if (ratio &gt; 1.13) action = &#x27;stretched&#x27;;
+    else if (ratio &lt; 0.86) action = &#x27;squished&#x27;;
+    if (Math.abs(side) &gt; 0.35) action = `${action} + twisted`;
+    status.textContent = action.charAt(0).toUpperCase() + action.slice(1);
+    readout.textContent = `${labels[state.kind]} · ${action}`;
+  }
+
+  function wobble() {
+    if (reducedMotion) {
+      relaxedTransform();
+      return;
+    }
+    squishy.animate([
+      { transform: squishy.style.transform || &#x27;scale(1)&#x27; },
+      { transform: `rotate(${state.lastAngle * 0.18}deg) scaleX(.88) scaleY(1.13) skewY(-6deg)` },
+      { transform: &#x27;rotate(-3deg) scaleX(1.08) scaleY(.94) skewY(4deg)&#x27; },
+      { transform: &#x27;rotate(2deg) scaleX(.97) scaleY(1.04) skewY(-2deg)&#x27; },
+      { transform: &#x27;rotate(0deg) scaleX(1) scaleY(1) skewY(0deg)&#x27; }
+    ], { duration: 560, easing: &#x27;cubic-bezier(.2,.8,.2,1)&#x27; }).onfinish = relaxedTransform;
+  }
+
+  function release() {
+    if (!state.grabbing) return;
+    state.grabbing = false;
+    state.caughtBy = null;
+    root.classList.remove(&#x27;is-grabbing&#x27;);
+    status.textContent = &#x27;Wobbling&#x27;;
+    readout.textContent = `${labels[state.kind]} · released`;
+    wobble();
+    window.setTimeout(() =&gt; {
+      if (!state.grabbing &amp;&amp; !state.throwing) status.textContent = &#x27;Floating&#x27;;
+    }, 580);
+  }
+
+  function startGrab(event) {
+    if (event.button !== 0 || state.throwing) return;
+    event.preventDefault();
+    const point = stagePoint(event);
+    setPointer(point);
+    const left = leftPoint();
+    state.startDistance = Math.max(80, Math.hypot(
+      (point.x - left.x) * point.width,
+      (point.y - left.y) * point.height
+    ));
+    state.grabbing = true;
+    state.caughtBy = &#x27;right&#x27;;
+    root.classList.add(&#x27;is-grabbing&#x27;);
+    squishy.setPointerCapture(event.pointerId);
+    status.textContent = &#x27;Gripped&#x27;;
+    updateGrip();
+  }
+
+  function toss() {
+    if (state.throwing) return;
+    state.throwing = true;
+    state.grabbing = false;
+    root.classList.remove(&#x27;is-grabbing&#x27;);
+
+    const left = leftPoint();
+    const targetSide = state.tossTarget;
+    const target = targetSide === &#x27;right&#x27;
+      ? { x: state.pointerX - 0.055, y: state.pointerY }
+      : { x: left.x + 0.06, y: left.y };
+    const start = { x: state.objectX, y: state.objectY };
+    const mid = {
+      x: (start.x + target.x) / 2,
+      y: clamp(Math.min(start.y, target.y) - 0.28, 0.16, 0.54)
+    };
+    const duration = reducedMotion ? 1 : 620;
+
+    status.textContent = `Tossing ${targetSide}`;
+    readout.textContent = `${labels[state.kind]} · airborne`;
+
+    const animation = orbit.animate([
+      { left: `${start.x * 100}%`, top: `${start.y * 100}%`, offset: 0 },
+      { left: `${mid.x * 100}%`, top: `${mid.y * 100}%`, offset: .5 },
+      { left: `${target.x * 100}%`, top: `${target.y * 100}%`, offset: 1 }
+    ], { duration, easing: &#x27;cubic-bezier(.25,.75,.2,1)&#x27; });
+
+    squishy.animate([
+      { transform: &#x27;rotate(0deg) scale(1)&#x27; },
+      { transform: &#x27;rotate(190deg) scaleX(1.12) scaleY(.9)&#x27; },
+      { transform: &#x27;rotate(380deg) scale(1)&#x27; }
+    ], { duration, easing: &#x27;ease-in-out&#x27; });
+
+    animation.onfinish = () =&gt; {
+      setObject(target.x, target.y);
+      state.caughtBy = targetSide;
+      state.tossTarget = targetSide === &#x27;right&#x27; ? &#x27;left&#x27; : &#x27;right&#x27;;
+      state.throwing = false;
+      relaxedTransform();
+      status.textContent = `Caught ${targetSide}`;
+      readout.textContent = `${labels[state.kind]} · caught by ${targetSide} hand`;
+    };
+  }
+
+  stage.addEventListener(&#x27;pointermove&#x27;, (event) =&gt; {
+    const point = stagePoint(event);
+    setPointer(point);
+    if (state.grabbing) updateGrip();
+    else if (state.caughtBy === &#x27;right&#x27; &amp;&amp; !state.throwing) {
+      setObject(point.x - 0.055, point.y);
+    }
+  });
+
+  squishy.addEventListener(&#x27;pointerdown&#x27;, startGrab);
+  squishy.addEventListener(&#x27;pointerup&#x27;, release);
+  squishy.addEventListener(&#x27;pointercancel&#x27;, release);
+
+  stage.addEventListener(&#x27;contextmenu&#x27;, (event) =&gt; {
+    event.preventDefault();
+    toss();
+  });
+
+  buttons.forEach((button) =&gt; {
+    button.addEventListener(&#x27;click&#x27;, () =&gt; {
+      const kind = button.dataset.kind;
+      if (!kind) return;
+      state.kind = kind;
+      squishy.dataset.kind = kind;
+      buttons.forEach((candidate) =&gt; {
+        const selected = candidate === button;
+        candidate.classList.toggle(&#x27;btn-primary&#x27;, selected);
+        candidate.setAttribute(&#x27;aria-pressed&#x27;, String(selected));
+      });
+      status.textContent = &#x27;Floating&#x27;;
+      readout.textContent = `${labels[kind]} · relaxed`;
+      wobble();
+    });
+  });
+
+  function idleFrame(now) {
+    if (!state.grabbing &amp;&amp; !state.throwing &amp;&amp; !state.caughtBy) {
+      const t = (now - state.idleStart) / 1000;
+      const x = 0.50 + Math.sin(t * 0.7) * 0.018;
+      const y = 0.50 + Math.cos(t * 1.05) * 0.027;
+      setObject(x, y);
+      squishy.style.transform = `rotate(${Math.sin(t * .8) * 2.4}deg) scaleX(${1 + Math.sin(t * 1.4) * .018}) scaleY(${1 - Math.sin(t * 1.4) * .018})`;
+    }
+    requestAnimationFrame(idleFrame);
+  }
+
+  setPointer({ x: state.pointerX, y: state.pointerY });
+  setObject(state.objectX, state.objectY);
+  requestAnimationFrame(idleFrame);
+})();
+&lt;/script&gt;
+
+&lt;script src=&quot;https://unpkg.com/@floating-ui/core@1.7.3/dist/floating-ui.core.umd.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://unpkg.com/@floating-ui/dom@1.7.4/dist/floating-ui.dom.umd.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+(() =&gt; {
+  if (window.FloatingUIDOM == null) {
+    return;
+  }
+  const { autoUpdate, computePosition, flip, offset, shift, size } =
+    window.FloatingUIDOM;
+  const tooltipPlacements = new Set([&quot;top&quot;, &quot;right&quot;, &quot;bottom&quot;, &quot;left&quot;]);
+  const tooltipId = `codex-visualization-tooltip-${
+    window.crypto?.randomUUID?.() ?? Date.now().toString(36)
+  }`;
+  const tooltipGap = 5;
+  const hoverDelay = 700;
+  const skipDelay = 300;
+  let activeTrigger = null;
+  let pendingTrigger = null;
+  let tooltip = null;
+  let openTimeout = null;
+  let autoUpdateCleanup = null;
+  let positionRequest = 0;
+  let skipDelayUntil = 0;
+
+  const getTrigger = (target) =&gt;
+    target?.nodeType === Node.ELEMENT_NODE
+      ? target.closest(&quot;[data-tooltip]&quot;)
+      : null;
+  const containsTarget = (trigger, target) =&gt;
+    target?.nodeType != null &amp;&amp; trigger.contains(target);
+  const getContent = (trigger) =&gt;
+    trigger.getAttribute(&quot;data-tooltip&quot;)?.trim() ?? &quot;&quot;;
+  const getPlacement = (trigger) =&gt; {
+    const placement = trigger.getAttribute(&quot;data-tooltip-placement&quot;);
+    return tooltipPlacements.has(placement) ? placement : &quot;top&quot;;
+  };
+  const getTooltip = () =&gt; {
+    if (tooltip == null) {
+      tooltip = document.createElement(&quot;div&quot;);
+      tooltip.id = tooltipId;
+      tooltip.className = &quot;tooltip&quot;;
+      tooltip.setAttribute(&quot;role&quot;, &quot;tooltip&quot;);
+    }
+    return tooltip;
+  };
+  const setDescribedBy = (trigger, described) =&gt; {
+    const ids = new Set(
+      (trigger.getAttribute(&quot;aria-describedby&quot;) ?? &quot;&quot;)
+        .split(/\s+/)
+        .filter(Boolean),
+    );
+    if (described) {
+      ids.add(tooltipId);
+    } else {
+      ids.delete(tooltipId);
+    }
+    if (ids.size === 0) {
+      trigger.removeAttribute(&quot;aria-describedby&quot;);
+    } else {
+      trigger.setAttribute(&quot;aria-describedby&quot;, [...ids].join(&quot; &quot;));
+    }
+  };
+  const clearOpenTimeout = () =&gt; {
+    if (openTimeout != null) {
+      window.clearTimeout(openTimeout);
+      openTimeout = null;
+    }
+    pendingTrigger = null;
+  };
+  const closeTooltip = (activateSkipDelay = true) =&gt; {
+    clearOpenTimeout();
+    positionRequest += 1;
+    autoUpdateCleanup?.();
+    autoUpdateCleanup = null;
+    if (activeTrigger == null) {
+      return;
+    }
+    setDescribedBy(activeTrigger, false);
+    activeTrigger = null;
+    tooltip?.remove();
+    if (activateSkipDelay) {
+      skipDelayUntil = Date.now() + skipDelay;
+    }
+  };
+  const updatePosition = (trigger, floating) =&gt; {
+    const request = ++positionRequest;
+    void computePosition(trigger, floating, {
+      middleware: [
+        offset(tooltipGap),
+        flip({ padding: tooltipGap }),
+        shift({ padding: tooltipGap }),
+        size({
+          padding: tooltipGap,
+          apply({ availableHeight, availableWidth, elements }) {
+            elements.floating.style.setProperty(
+              &quot;--tooltip-available-width&quot;,
+              `${Math.max(0, availableWidth)}px`,
+            );
+            elements.floating.style.setProperty(
+              &quot;--tooltip-available-height&quot;,
+              `${Math.max(0, availableHeight)}px`,
+            );
+          },
+        }),
+      ],
+      placement: getPlacement(trigger),
+      strategy: &quot;fixed&quot;,
+    })
+      .then(({ x, y }) =&gt; {
+        if (activeTrigger !== trigger || request !== positionRequest) {
+          return;
+        }
+        const scale = window.devicePixelRatio || 1;
+        floating.style.transform = `translate(${Math.round(x * scale) / scale}px, ${Math.round(y * scale) / scale}px)`;
+        floating.style.visibility = &quot;visible&quot;;
+      })
+      .catch(() =&gt; {
+        if (activeTrigger === trigger &amp;&amp; request === positionRequest) {
+          closeTooltip(false);
+        }
+      });
+  };
+  const openTooltip = (trigger) =&gt; {
+    const content = getContent(trigger);
+    if (!trigger.isConnected || content.length === 0) {
+      return;
+    }
+    clearOpenTimeout();
+    if (activeTrigger === trigger) {
+      return;
+    }
+    closeTooltip();
+    const floating = getTooltip();
+    floating.textContent = content;
+    floating.style.visibility = &quot;hidden&quot;;
+    floating.style.transform = &quot;translate(0, 0)&quot;;
+    document.body.appendChild(floating);
+    activeTrigger = trigger;
+    setDescribedBy(trigger, true);
+    autoUpdateCleanup = autoUpdate(trigger, floating, () =&gt; {
+      updatePosition(trigger, floating);
+    });
+  };
+  const requestOpen = (trigger, immediate = false) =&gt; {
+    if (
+      getContent(trigger).length === 0 ||
+      activeTrigger === trigger ||
+      pendingTrigger === trigger
+    ) {
+      return;
+    }
+    clearOpenTimeout();
+    pendingTrigger = trigger;
+    const delay =
+      immediate || activeTrigger != null || Date.now() &lt; skipDelayUntil
+        ? 0
+        : hoverDelay;
+    if (delay === 0) {
+      openTooltip(trigger);
+      return;
+    }
+    openTimeout = window.setTimeout(() =&gt; {
+      openTimeout = null;
+      pendingTrigger = null;
+      openTooltip(trigger);
+    }, delay);
+  };
+  const handlePointerOpen = (event) =&gt; {
+    if (event.pointerType === &quot;touch&quot;) {
+      return;
+    }
+    const trigger = getTrigger(event.target);
+    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
+      return;
+    }
+    requestOpen(trigger);
+  };
+  const handleLeave = (event) =&gt; {
+    const trigger = getTrigger(event.target);
+    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
+      return;
+    }
+    if (activeTrigger === trigger || pendingTrigger === trigger) {
+      closeTooltip();
+    }
+  };
+  const handleFocusIn = (event) =&gt; {
+    const trigger = getTrigger(event.target);
+    if (trigger?.matches(&quot;:focus-visible&quot;)) {
+      requestOpen(trigger, true);
+    }
+  };
+  const handleKeyDown = (event) =&gt; {
+    if (event.key === &quot;Escape&quot;) {
+      closeTooltip();
+    }
+  };
+  const handleContextMenu = (event) =&gt; {
+    const trigger = getTrigger(event.target);
+    if (activeTrigger === trigger || pendingTrigger === trigger) {
+      closeTooltip();
+    }
+  };
+  const destroy = () =&gt; {
+    closeTooltip(false);
+    document.removeEventListener(&quot;pointerover&quot;, handlePointerOpen);
+    document.removeEventListener(&quot;pointerout&quot;, handleLeave);
+    document.removeEventListener(&quot;focusin&quot;, handleFocusIn);
+    document.removeEventListener(&quot;focusout&quot;, handleLeave);
+    document.removeEventListener(&quot;keydown&quot;, handleKeyDown);
+    document.removeEventListener(&quot;contextmenu&quot;, handleContextMenu);
+    tooltip = null;
+  };
+
+  document.addEventListener(&quot;pointerover&quot;, handlePointerOpen);
+  document.addEventListener(&quot;pointerout&quot;, handleLeave);
+  document.addEventListener(&quot;focusin&quot;, handleFocusIn);
+  document.addEventListener(&quot;focusout&quot;, handleLeave);
+  document.addEventListener(&quot;keydown&quot;, handleKeyDown);
+  document.addEventListener(&quot;contextmenu&quot;, handleContextMenu);
+  window.addEventListener(&quot;pagehide&quot;, destroy, { once: true });
+})();
+&lt;/script&gt;
+&lt;script id=&quot;codex-visualization-lucide&quot; async src=&quot;https://unpkg.com/lucide@1.17.0/dist/umd/lucide.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+(() =&gt; {
+  const initialize = () =&gt; {
+    globalThis.lucide?.createIcons({ attrs: { width: 16, height: 16 } });
+  };
+  if (globalThis.lucide != null) {
+    initialize();
+    return;
+  }
+  document
+    .getElementById(&quot;codex-visualization-lucide&quot;)
+    ?.addEventListener(&quot;load&quot;, initialize, { once: true });
+})();
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe>
+</body>
+</html>
