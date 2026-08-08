@@ -1,0 +1,16 @@
+node_modules/
+.DS_Store
+*.local.md
+.env
+.env.*
+.secrets/
+brains/
+user-data/
+.claude/
+AGENTS.md
+.codex/
+.agent-manager*.yaml
+agent-manager.context.md
+dist/
+coverage/
+*.log

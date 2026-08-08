@@ -1,0 +1,14 @@
+{
+  "name": "squishbench",
+  "version": "0.1.0",
+  "private": true,
+  "description": "SquishBench — browser fidget toy and model bake-off harness",
+  "license": "MIT",
+  "scripts": {
+    "start": "npx --yes serve app -l 4173",
+    "test": "node --test test/smoke.test.mjs"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}
