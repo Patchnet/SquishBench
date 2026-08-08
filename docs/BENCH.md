@@ -37,6 +37,12 @@ These are what make entries comparable. Break one and the entry is not a one-sho
 5. **Same contract version.** If `prompts/oneshot.md` changes, note the change here and treat
    earlier entries as belonging to the older contract. Do not silently compare across versions.
 
+### Contract changelog
+
+| Date | Change |
+|---|---|
+| 2026-08-08 | Added **Taste** section to `prompts/oneshot.md` (anti-slop cues; look still model-chosen). Scoring moved from 7×3=21 to 8×3=24 with a **Taste** dimension. `improve.md` examples updated. |
+
 Multi-lane runs get one deliberate exemption, covered below.
 
 ## Filing an entry
@@ -52,8 +58,8 @@ Multi-lane runs get one deliberate exemption, covered below.
 
 ## Scoring
 
-Seven dimensions, 0–3 each, 21 total. Score by playing with the entry, not by reading its code —
-except for the code-quality dimension.
+Eight dimensions, 0–3 each, **24** total. Score by playing with the entry, not by reading its
+code — except for the code-quality dimension.
 
 | # | Dimension | 0 | 1 | 2 | 3 |
 |---|---|---|---|---|---|
@@ -62,8 +68,9 @@ except for the code-quality dimension.
 | 3 | **Two-hand model** | One hand or none | Both hands present, wrong roles | Left anchored, right tracks pointer | Correct roles plus a toss that arcs and alternates |
 | 4 | **Objects** | Fewer than three | Three, but cow or pizza unrecognizable | All three recognizable | All three recognizable and characterful, sharing one physics model |
 | 5 | **Feel** | Static | Movement, no easing | Idle drift and release wobble present | Motion has weight — overshoot, settle, spin all read as physical |
-| 6 | **Code quality** | Single file | Split, but tangled | Clean split, readable | Clean split, clear state model, no dead code, comments where they earn it |
-| 7 | **Input and a11y** | Mouse only | Touch partly works | Touch, keyboard picker, reduced-motion honored | All of that plus labeled controls, live status, no stuck states on cancel or blur |
+| 6 | **Taste** | Unstyled or AI-default chrome (purple gradient, emoji-only craft, card soup) | Generic but intentional | Clear direction, minor clichés | Distinct composition; material reads; no anti-slop violations from the Taste section of the oneshot |
+| 7 | **Code quality** | Single file | Split, but tangled | Clean split, readable | Clean split, clear state model, no dead code, comments where they earn it |
+| 8 | **Input and a11y** | Mouse only | Touch partly works | Touch, keyboard picker, reduced-motion honored | All of that plus labeled controls, live status, no stuck states on cancel or blur |
 
 Record the result in `meta.json`:
 
@@ -74,16 +81,18 @@ Record the result in `meta.json`:
   "hands": 3,
   "objects": 1,
   "feel": 2,
+  "taste": 2,
   "code": 2,
   "input": 1,
-  "total": 14,
+  "total": 16,
   "reviewer_notes": "Pizza reads as an orange circle. Twist inverts past ~60deg."
 }
 ```
 
-Two things the rubric deliberately does not measure: how pretty it is, and how long it took.
-Aesthetics are real but not repeatable across reviewers; wall-clock is not comparable across
-harnesses with different concurrency. Put both in `notes` as prose if they matter.
+**Taste** is scored from the oneshot's Taste section: direction is free; purple-gradient /
+emoji-only / card-soup defaults lose points. Wall-clock is still not scored — put it in `notes`
+if it matters. Entries filed under the older 21-point rubric stay comparable only within that
+contract version.
 
 Scoring is a judgement call. The rubric exists so two reviewers land within a point or two of
 each other, not to remove the judgement.
@@ -108,7 +117,7 @@ thing being tested. What it is *not* allowed is human repair (rule 3) or extra b
 contract (rules 1 and 4). Write down in `notes` exactly what the harness did on its own, because
 that is the variable.
 
-Score it on the same 21 points, then read the gap by dimension rather than by total:
+Score it on the same 24 points, then read the gap by dimension rather than by total:
 
 - **Code quality and objects up, feel down** — the usual multi-lane signature. Parallel work
   covers more surface area but nobody owned the overall touch.

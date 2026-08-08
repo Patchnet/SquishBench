@@ -23,7 +23,12 @@ is negotiable, and any change that breaks a requirement in it is a regression.
  - the release wobble reads as mechanical; make it feel like rubber settling
  - the cow is not recognizable as a cow at a glance
  - twist and stretch fight each other when combined
- - touch users cannot trigger the toss]
+ - touch users cannot trigger the toss
+ - the look is generic purple-gradient demo chrome; pick a clearer material direction
+ - the stage reads like a dashboard of cards; simplify to one play surface]
+
+When the ask is visual, raise craft — do not paste a new default theme. The Taste section of
+`prompts/oneshot.md` still applies (anti-slop constraints included).
 
 ## Constraints
 

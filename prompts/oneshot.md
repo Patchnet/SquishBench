@@ -109,6 +109,27 @@ right-click does anything.
 - Animation runs off the compositor where practical — prefer transforms over layout-triggering
   properties in the per-frame path.
 
+## Taste
+
+You choose the look. Palette, typography, atmosphere, and ornament are yours — this bench
+measures craft as much as correctness. Pick a clear visual direction and commit to it.
+
+Do **not** ship the default AI-demo look:
+
+- No purple-on-white or purple-to-indigo gradient themes as the main idea
+- No warm cream background with a high-contrast serif display and a terracotta accent as the
+  whole aesthetic
+- No broadsheet / dense newspaper layout with hairline rules and zero radius as the stage chrome
+- No relying on emoji as the only craft for the hands or objects — CSS, SVG, or canvas should
+  carry the forms (emoji accents are fine; emoji-only toys are not)
+- No glow-stack, multi-layer shadow soup, or rounded-full pill clusters as decoration without a
+  reason
+- No card grid / dashboard chrome around a toy that should read as one play surface
+
+The first viewport should feel like one composition: brand or title, short cue, the stage, the
+picker, the status. Prefer a real sense of material (rubber, dough, cheese) over flat abstract
+shapes. Motion should create presence and weight, not noise.
+
 Judgement calls not covered above are yours. Make the thing feel good.
 
 ---
